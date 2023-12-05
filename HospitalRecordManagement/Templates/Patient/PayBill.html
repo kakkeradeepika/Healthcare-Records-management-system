@@ -1,0 +1,220 @@
+<!doctype html>
+{% load static %}
+<html class="no-js" lang="zxx">
+    <head>
+        <!-- Meta Tags -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="keywords" content="Site keywords here">
+		<meta name="description" content="">
+		<meta name='copyright' content=''>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<!-- Title -->
+        <title>Healthcare</title>
+
+		<!-- Favicon -->
+        <!-- Favicon -->
+        <link rel="icon" href="{%static 'img/favicon.png'%}">
+
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
+		<!-- Nice Select CSS -->
+		<link rel="stylesheet" href="{%static 'css/nice-select.css'%}">
+		<!-- Font Awesome CSS -->
+        <link rel="stylesheet" href="{%static 'css/font-awesome.min.css'%}">
+		<!-- icofont CSS -->
+        <link rel="stylesheet" href="{%static 'css/icofont.css'%}">
+		<!-- Slicknav -->
+		<link rel="stylesheet" href="{%static 'css/slicknav.min.css'%}">
+		<!-- Owl Carousel CSS -->
+        <link rel="stylesheet" href="{%static 'css/owl-carousel.css'%}">
+		<!-- Datepicker CSS -->
+		<link rel="stylesheet" href="{%static 'css/datepicker.css'%}">
+		<!-- Animate CSS -->
+        <link rel="stylesheet" href="{%static 'css/animate.min.css'%}">
+		<!-- Magnific Popup CSS -->
+        <link rel="stylesheet" href="{%static 'css/magnific-popup.css'%}">
+
+		<!-- Medipro CSS -->
+        <link rel="stylesheet" href="{%static 'css/normalize.css'%}">
+        <link rel="stylesheet" href="{%static 'style.css'%}">
+        <link rel="stylesheet" href="{%static 'css/responsive.css'%}">
+
+    </head>
+    <body>
+
+
+		<!-- Header Area -->
+		<header class="header" >
+			<!-- Topbar -->
+			<div class="topbar">
+				<div class="container">
+					<div class="row">
+
+						<div class="col-lg-6 col-md-7 col-12">
+							<!-- Top Contact -->
+
+							<!-- End Top Contact -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End Topbar -->
+			<!-- Header Inner -->
+			<div class="header-inner">
+				<div class="container">
+					<div class="inner">
+						<div class="row">
+							<div class="col-lg-3 col-md-3 col-12">
+								<!-- Start Logo -->
+								<div class="logo">
+                                    <h2>HealthCare</h2>
+								</div>
+								<!-- End Logo -->
+								<!-- Mobile Nav -->
+								<div class="mobile-nav"></div>
+								<!-- End Mobile Nav -->
+							</div>
+							<div class="col-lg-7 col-md-9 col-12">
+								<!-- Main Menu -->
+								<div class="main-menu">
+									<nav class="navigation">
+										<ul class="nav menu" style="border:none;width:800px;">
+
+                                            <li><a href="/patient/patienthome">Home </a></li>
+											 <li><a href="/patient/viewdoctors">View Doctors</a></li>
+                                            <li class="active"><a href="/patient/AppSchedule">Appointment Status</a></li>
+											<li><a href="/patient/viewreport">view Reports</a></li>
+											<li><a href="/patient/login">Logout</a></li>
+
+										</ul>
+									</nav>
+								</div>
+								<!--/ End Main Menu -->
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--/ End Header Inner -->
+		</header>
+		<!-- End Header Area -->
+
+		<!-- Breadcrumbs -->
+		<div class="breadcrumbs overlay">
+			<div class="container">
+				<div class="bread-inner">
+					<div class="row">
+						<div class="col-12">
+							<h2>Bill Payment</h2>
+							<ul class="bread-list">
+								<li><a href="index.html">Home</a></li>
+								<li><i class="icofont-simple-right"></i></li>
+								<li class="active">Bill Payment</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Breadcrumbs -->
+
+		<!-- Start Portfolio Details Area -->
+		<section class="pf-details section">
+			<div class="container">
+				<div class="row">
+
+					<div class="col-8">
+						<div class="inner-content">
+	                    <div class="choose-left">
+                            <div class="card-header bg-light text-center p-4">
+                            <h1 class="m-0">Pay Bill</h1>
+                        </div>
+						<p style="color:red">{{data}}</p>
+                        <div class="card-body rounded-bottom bg-primary p-5">
+                            <form action="/patient/PBillAction" method="post">
+                                {%csrf_token%}
+                                <div class="form-group">
+									<p style="color:gold">Bill Id</p>
+                                    <input type="text" name="b_id" class="form-control border-0 p-4" value="{{request.session.bid}}" readonly/>
+                                </div>
+
+                                <div class="form-group">
+									<p style="color:gold">Charge</p>
+                                    <input type="text" name="amount" class="form-control border-0 p-4" value="{{request.session.am}}" readonly/>
+                                </div>
+
+
+                                <div>
+                                    <button class="btn btn-dark btn-block border-0 py-3" type="submit">Pay Now</button>
+                                </div>
+                                 </form>
+                        </div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Portfolio Details Area -->
+
+
+			<!-- Copyright -->
+			<div class="copyright">
+				<div class="container">
+					<div class="row">
+
+					</div>
+				</div>
+			</div>
+			<!--/ End Copyright -->
+		</footer>
+		<!--/ End Footer Area -->
+
+		<!-- jquery Min JS -->
+        <script src="{%static 'js/jquery.min.js'%}"></script>
+		<!-- jquery Migrate JS -->
+		<script src="{%static 'js/jquery-migrate-3.0.0.js'%}"></script>
+		<!-- jquery Ui JS -->
+		<script src="{%static 'js/jquery-ui.min.js'%}"></script>
+		<!-- Easing JS -->
+        <script src="{%static 'js/easing.js'%}"></script>
+		<!-- Color JS -->
+		<script src="{%static 'js/colors.js'%}"></script>
+		<!-- Popper JS -->
+		<script src="{%static 'js/popper.min.js'%}"></script>
+		<!-- Bootstrap Datepicker JS -->
+		<script src="{%static 'js/bootstrap-datepicker.js'%}"></script>
+		<!-- Jquery Nav JS -->
+        <script src="{%static 'js/jquery.nav.js'%}"></script>
+		<!-- Slicknav JS -->
+		<script src="{%static 'js/slicknav.min.js'%}"></script>
+		<!-- ScrollUp JS -->
+        <script src="{%static 'js/jquery.scrollUp.min.js'%}"></script>
+		<!-- Niceselect JS -->
+		<script src="{%static 'js/niceselect.js'%}"></script>
+		<!-- Tilt Jquery JS -->
+		<script src="{%static 'js/tilt.jquery.min.js'%}"></script>
+		<!-- Owl Carousel JS -->
+        <script src="{%static 'js/owl-carousel.js'%}"></script>
+		<!-- counterup JS -->
+		<script src="{%static 'js/jquery.counterup.min.js'%}"></script>
+		<!-- Steller JS -->
+		<script src="{%static 'js/steller.js'%}"></script>
+		<!-- Wow JS -->
+		<script src="{%static 'js/wow.min.js'%}"></script>
+		<!-- Magnific Popup JS -->
+		<script src="{%static 'js/jquery.magnific-popup.min.js'%}"></script>
+		<!-- Counter Up CDN JS -->
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+		<!-- Bootstrap JS -->
+		<script src="{%static 'js/bootstrap.min.js'%}"></script>
+		<!-- Main JS -->
+		<script src="{%static 'js/main.js'%}"></script>
+    </body>
+</html>
